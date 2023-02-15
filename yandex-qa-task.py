@@ -5,6 +5,8 @@ def getWordMaxRepeadInput() -> str:
     inp = input("enter something: ")
     tempList = list(filter(None, inp.split()))
     tempDict = {}
+    if len(tempList) < 2:
+        return tempList
     for x in set(tempList):
         tempDict[x] = tempList.count(x)
     return max(tempDict, key=tempDict.get)
